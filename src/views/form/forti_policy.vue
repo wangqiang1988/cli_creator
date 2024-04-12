@@ -26,7 +26,7 @@
       <el-form-item>
         <el-button type="primary" @click="onSubmit">生成命令</el-button>
       </el-form-item>
-      <el-form-item v-show="form.command" label="命令">
+      <el-form-item label="命令">
         <el-input v-model="form.command" type="textarea" style="width: 40%;" placeholder="命令"/>
       </el-form-item>
       <el-form-item>
