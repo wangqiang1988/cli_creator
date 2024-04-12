@@ -71,7 +71,7 @@ export const constantRoutes = [
     component: Layout,
     children: [
       {
-        path: 'https://github.com/wangqiang1988/cli_creator',
+        path: 'https://github.com/wangqiang1988/cli_creator_backend',
         meta: { title: 'github', icon: 'link' }
       }
     ]
