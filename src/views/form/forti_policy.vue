@@ -27,7 +27,7 @@
         <el-button type="primary" @click="onSubmit">生成命令</el-button>
       </el-form-item>
       <el-form-item v-show="form.command" label="命令">
-        <el-input v-show="form.command" v-model="form.command" type="textarea" />
+        <el-input v-show="form.command" v-model="form.command" type="textarea" :rows="6" />
         <el-button v-show="form.command" v-clipboard:copy="form.command" v-clipboard:success="clipboardSuccess" type="primary" icon="el-icon-document">
           复制
         </el-button>
