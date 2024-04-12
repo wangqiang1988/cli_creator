@@ -72,7 +72,7 @@ export const constantRoutes = [
     children: [
       {
         path: 'https://github.com/wangqiang1988/cli_creator',
-        meta: { title: 'External Link', icon: 'link' }
+        meta: { title: 'github', icon: 'link' }
       }
     ]
   },
