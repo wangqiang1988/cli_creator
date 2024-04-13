@@ -23,6 +23,15 @@
       <el-form-item label="UDP端口">
         <el-input v-model="form.udpport" type="textarea" style="width: 40%;" placeholder="例:53，用英文,隔开"/>
       </el-form-item>
+      <el-form-item label="log记录默认all" >
+        <el-tooltip content="请选择日志记录方式" placement="top">
+        <el-radio-group v-model="form.log" >
+          <el-radio label="all" />
+          <el-radio label="utm" />
+          <el-radio label="disable" />
+        </el-radio-group>
+       </el-tooltip>
+      </el-form-item>
       <el-form-item>
         <el-button type="primary" @click="onSubmit">生成命令</el-button>
       </el-form-item>
@@ -56,6 +65,7 @@ export default {
         desadd: '',
         tcpport: '',
         udpport: '',
+        log: 'all',
         command: '',
       }
     }
@@ -63,7 +73,7 @@ export default {
   methods: {
     onSubmit() {
       this.$message('submit!')
-      axios.post('/firewall/forticli?name='+this.form.name+'&src_if='+this.form.srcif+'&des_if='+this.form.desif+'&src_add='+this.form.srcadd+'&des_add='+this.form.desadd+'&tcp_port='+this.form.tcpport+'&udp_port='+this.form.udpport)
+      axios.post('/firewall/forticli?name='+this.form.name+'&src_if='+this.form.srcif+'&des_if='+this.form.desif+'&src_add='+this.form.srcadd+'&des_add='+this.form.desadd+'&tcp_port='+this.form.tcpport+'&udp_port='+this.form.udpport + '&log='+this.form.log)
       .then(resp => {
             console.log(resp.data)
             this.form.command = resp.data.result
