@@ -72,49 +72,17 @@ export default {
   },
   methods: {
     onSubmit() {
-    // 显示提交消息
-    this.$message('submit!');
-
-    // 构造要发送的数据对象
-    const formData = new FormData();
-    formData.append('name', this.form.name);
-    formData.append('src_if', this.form.srcif);
-    formData.append('des_if', this.form.desif);
-    formData.append('src_add', this.form.srcadd);
-    formData.append('des_add', this.form.desadd);
-    formData.append('tcp_port', this.form.tcpport);
-    formData.append('udp_port', this.form.udpport);
-    formData.append('log', this.form.log);
-
-    // 打印数据以便调试
-    for (var pair of formData.entries()) {
-        console.log(pair[0]+ ', ' + pair[1]); 
-    }
-
-    // 发送 POST 请求
-    axios.post('/firewall/forticli', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
+      this.$message('submit!')
+      axios.post('/firewall/forticli?name='+this.form.name+'&src_if='+this.form.srcif+'&des_if='+this.form.desif+'&src_add='+this.form.srcadd+'&des_add='+this.form.desadd+'&tcp_port='+this.form.tcpport+'&udp_port='+this.form.udpport + '&log='+this.form.log)
       .then(resp => {
-        // 打印响应数据以便调试
-        console.log(resp.data);
-        
-        // 更新表单中的命令
-        this.form.command = resp.data.result;
-
-        // 关闭加载状态
-        this.listLoading = false;
-      })
-      .catch(err => {
-        // 打印错误信息以便调试
-        console.error(err);
-
-        // 关闭加载状态
-        this.listLoading = false;
-      });
-  },
+            console.log(resp.data)
+            this.form.command = resp.data.result
+            this.listLoading = false
+          }).catch(err => {
+            console.log(err)
+            this.listLoading = false
+          })
+    },
     onCancel() {
       this.$message({
         message: 'cancel!',

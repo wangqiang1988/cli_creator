@@ -54,15 +54,21 @@ export const constantRoutes = [
       meta: { title: 'Dashboard', icon: 'dashboard' }
     }]
   },
-  {
-    path: '/forti',
+   {
+    path: '/firewall',
     component: Layout,
+    redirect: '/firewall/fortigate_policy',
+    name: 'firewall',
+    meta: {
+      title: 'firewall',
+      icon: 'nested'
+    },
     children: [
       {
-        path: 'index',
-        name: 'forti_policy',
+        path: 'fortigate_policy',
         component: () => import('@/views/form/forti_policy'),
-        meta: { title: 'fortigate_policy', icon: 'form' }
+        name: 'fortigate_policy',
+        meta: { title: 'fortigate_policy' }
       }
     ]
   },
