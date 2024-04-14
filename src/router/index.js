@@ -67,8 +67,14 @@ export const constantRoutes = [
       {
         path: 'fortigate_policy',
         component: () => import('@/views/form/forti_policy'),
-        name: 'fortigate_policy',
+        name: 'fortigate_policy_new',
         meta: { title: 'fortigate_policy' }
+      },
+      {
+        path: 'fortigate_policy_modify',
+        component: () => import('@/views/form/forti_policy_modify'),
+        name: 'fortigate_policy_modify',
+        meta: { title: 'fortigate_policy_modify' }
       }
     ]
   },
