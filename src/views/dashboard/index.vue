@@ -1,34 +1,33 @@
 <template>
-  <div class="dashboard-container">
-    <div class="dashboard-text">cli_creator v1.1
+  <div>
+  <div class="dashboard-editor-container">
+    <el-row :gutter="8">
+      <el-col :xs="{span: 24}" :sm="{span: 12}" :md="{span: 12}" :lg="{span: 6}" :xl="{span: 6}" style="margin-bottom:10px;">
+        <todo-list />
+      </el-col>
+    </el-row>
+  </div>
     </div>
-    <p>飞塔防火墙策略生成</p>
-    <p>飞塔防火墙策略修改</p>
-    
-</div>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+
+import TodoList from './components/TodoList'
+
 
 export default {
-  name: 'Dashboard',
-  computed: {
-    ...mapGetters([
-      'name'
-    ])
-  }
+  name: 'DashboardAdmin',
+  components: {
+    TodoList
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.dashboard {
-  &-container {
-    margin: 30px;
-  }
-  &-text {
-    font-size: 30px;
-    line-height: 46px;
-  }
+.dashboard-editor-container {
+  padding: 32px;
+  background-color: rgb(255, 255, 255);
+  position: relative;
 }
+
 </style>
