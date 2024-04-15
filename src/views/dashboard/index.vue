@@ -1,7 +1,11 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">cli_creator</div>
-  </div>
+    <div class="dashboard-text">cli_creator v1.1
+    </div>
+    <p>飞塔防火墙策略生成</p>
+    <p>飞塔防火墙策略修改</p>
+    
+</div>
 </template>
 
 <script>
