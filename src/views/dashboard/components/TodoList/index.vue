@@ -49,9 +49,9 @@
   const defalutList = [
     { text: 'check ip', done: false },
     { text: '支持掩码操作', done: true },
-    { text: '防火墙策略生成（修改）', done: true },
+    { text: '防火墙策略修改', done: true },
     { text: 'logtraffic', done: true },
-    { text: '防火墙策略生成（新增）', done: true },
+    { text: '防火墙策略生成', done: true },
   ]
   export default {
     components: { Todo },
