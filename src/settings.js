@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: 'Vue Admin Template',
+  title: 'Cli Creator',
 
   /**
    * @type {boolean} true | false
