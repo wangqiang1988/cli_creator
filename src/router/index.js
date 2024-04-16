@@ -60,7 +60,7 @@ export const constantRoutes = [
     redirect: '/firewall/fortigate_policy',
     name: 'firewall',
     meta: {
-      title: 'firewall',
+      title: '防火墙',
       icon: 'nested'
     },
     children: [
@@ -68,24 +68,34 @@ export const constantRoutes = [
         path: 'fortigate_policy',
         component: () => import('@/views/form/forti_policy'),
         name: 'fortigate_policy_new',
-        meta: { title: 'fortigate_policy' }
+        meta: { title: '飞塔防火墙策略生成' }
       },
       {
         path: 'fortigate_policy_modify',
         component: () => import('@/views/form/forti_policy_modify'),
         name: 'fortigate_policy_modify',
-        meta: { title: 'fortigate_policy_modify' }
+        meta: { title: '飞塔防火墙策略修改' }
       }
     ]
   },
   {
     path: 'external-link',
     component: Layout,
+    name: 'other',
+    meta: {
+      title: '其他',
+      icon: 'nested'
+    },
     children: [
       {
         path: 'https://github.com/wangqiang1988/cli_creator_backend',
-        meta: { title: 'github', icon: 'link' }
-      }
+        meta: { title: '后端源码', icon: 'link' }
+      },
+      {
+        path: 'https://pdf.madless.club/',
+        meta: { title: 'pdf转换工具', icon: 'link' }
+      },
+      
     ]
   },
 

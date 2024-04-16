@@ -2,7 +2,7 @@
     <section class="todoapp">
       <!-- header -->
       <header class="header">
-        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.2功能说明" @keyup.enter="addTodo">
+        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.3功能说明" @keyup.enter="addTodo">
       </header>
       <!-- main section -->
       <section v-show="todos.length" class="main">
@@ -48,6 +48,7 @@
   }
   const defalutList = [
     { text: 'check ip', done: false },
+    { text: 'pdf转换工具导航', done: true },
     { text: '支持掩码操作', done: true },
     { text: '防火墙策略修改', done: true },
     { text: 'logtraffic', done: true },
