@@ -2,7 +2,7 @@
     <section class="todoapp">
       <!-- header -->
       <header class="header">
-        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.1功能说明" @keyup.enter="addTodo">
+        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.2功能说明" @keyup.enter="addTodo">
       </header>
       <!-- main section -->
       <section v-show="todos.length" class="main">
