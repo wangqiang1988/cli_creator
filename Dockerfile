@@ -11,7 +11,17 @@ COPY . /app
 # 安装依赖
 RUN npm install
 
-EXPOSE 9528
+RUN npm run build:prod
 
-# 运行开发服务器
-CMD ["npm", "run", "dev"]
+FROM nginx:1.15.12 as runtime
+
+COPY --from=build /app/dist /usr/share/nginx/html
+
+RUN echo "\
+server {\n\
+    listen *:8090;\n\
+\n\
+    location / {\n\
+        root /usr/share/nginx/html;\n\
+        }\n\
+}" > /etc/nginx/conf.d/default.conf
