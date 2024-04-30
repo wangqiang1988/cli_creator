@@ -2,7 +2,7 @@
     <section class="todoapp">
       <!-- header -->
       <header class="header">
-        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.3功能说明" @keyup.enter="addTodo">
+        <input class="new-todo" autocomplete="off" placeholder="Cli_Creator v1.5功能说明" @keyup.enter="addTodo">
       </header>
       <!-- main section -->
       <section v-show="todos.length" class="main">
@@ -48,11 +48,13 @@
   }
   const defalutList = [
     { text: 'check ip', done: false },
-    { text: 'pdf转换工具导航', done: true },
-    { text: '支持掩码操作', done: true },
-    { text: '防火墙策略修改', done: true },
-    { text: 'logtraffic', done: true },
-    { text: '防火墙策略生成', done: true },
+    { text: '文本去重/文本遍历-20240426', done: true },
+    { text: '新增juniper防火墙策略生成-20240424', done: true },
+    { text: 'pdf转换工具导航-20240415', done: true },
+    { text: '支持掩码操作-20240414', done: true },
+    { text: '防火墙策略修改-20240414', done: true },
+    { text: 'logtraffic-20240414', done: true },
+    { text: '防火墙策略生成-20240413', done: true },
   ]
   export default {
     components: { Todo },
